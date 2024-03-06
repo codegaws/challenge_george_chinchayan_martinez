@@ -1,5 +1,11 @@
 const textArea = document.querySelector("[name='text-area']");
 const mensaje = document.querySelector(".mensaje");
+const btnCopiar = document.querySelector(".btn-copiar");
+
+btnCopiar.addEventListener("click", function () {
+	mensaje.select(); // Selecciona todo el texto en el área de texto
+	document.execCommand("copy"); // Copia el texto seleccionado al portapapeles
+});
 
 function btnEncriptar() {
 	const textoEncriptado = encriptar(textArea.value);
